@@ -1,0 +1,155 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Vapor Theme\n"
+"POT-Creation-Date: 2024-12-26 20:57-0800\n"
+"PO-Revision-Date: 2024-12-26 20:57-0800\n"
+"Last-Translator: \n"
+"Language-Team: Joshua Parker\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Domain: vapor-theme\n"
+"X-Generator: Poedit 3.4.2\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: t__;esc_html__\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: locale\n"
+"X-Poedit-SearchPathExcluded-1: assets\n"
+
+#: Controllers/VaporThemeController.php:73
+#: Controllers/VaporThemeController.php:166
+msgid "404: Not Found"
+msgstr ""
+
+#: Controllers/VaporThemeController.php:113
+msgid "Access denied."
+msgstr ""
+
+#: Controllers/VaporThemeController.php:131
+msgid "Update error."
+msgstr ""
+
+#: Controllers/VaporThemeController.php:135
+msgid "Updated successfully."
+msgstr ""
+
+#: VaporTheme.php:42
+msgid "Vapor"
+msgstr ""
+
+#: VaporTheme.php:46
+msgid ""
+"Ported from Ghost, Vapor is a minimal and responsive theme with a focus on "
+"typography."
+msgstr ""
+
+#: views/index.phtml:25
+msgid "read more . . ."
+msgstr ""
+
+#: views/index.phtml:32
+msgid "Newer"
+msgstr ""
+
+#: views/index.phtml:35
+msgid "Older"
+msgstr ""
+
+#: views/layout.phtml:40
+msgid "All rights reserved."
+msgstr ""
+
+#: views/layout.phtml:41
+msgid "Design by"
+msgstr ""
+
+#: views/no-content.phtml:8
+msgid "No content found!"
+msgstr ""
+
+#: views/show.phtml:30 views/show.phtml:51
+msgid "Vapor Theme Options"
+msgstr ""
+
+#: views/show.phtml:33
+msgid "Update"
+msgstr ""
+
+#: views/show.phtml:57
+msgid "Content Type"
+msgstr ""
+
+#: views/show.phtml:67
+msgid "Content Offset"
+msgstr ""
+
+#: views/show.phtml:71
+msgid "Content Status"
+msgstr ""
+
+#: views/show.phtml:74
+msgid "All"
+msgstr ""
+
+#: views/show.phtml:75
+msgid "Published"
+msgstr ""
+
+#: views/show.phtml:76
+msgid "Draft"
+msgstr ""
+
+#: views/show.phtml:77
+msgid "Pending"
+msgstr ""
+
+#: views/show.phtml:78
+msgid "Archived"
+msgstr ""
+
+#: views/show.phtml:82
+msgid "Order Content By"
+msgstr ""
+
+#: views/show.phtml:85
+msgid "Published Date"
+msgstr ""
+
+#: views/show.phtml:86
+msgid "Modified Date"
+msgstr ""
+
+#: views/show.phtml:87
+msgid "Created Date"
+msgstr ""
+
+#: views/show.phtml:91
+msgid "Order"
+msgstr ""
+
+#: views/show.phtml:94
+msgid "Ascending Order"
+msgstr ""
+
+#: views/show.phtml:95
+msgid "Descending Order"
+msgstr ""
+
+#: views/single.phtml:33
+msgid "Tag"
+msgstr ""
+
+#: views/single.phtml:37
+msgid "Twitter"
+msgstr ""
+
+#: views/single.phtml:40
+msgid "Facebook"
+msgstr ""
+
+#: views/single.phtml:48
+msgid "Author"
+msgstr ""

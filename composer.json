@@ -1,0 +1,29 @@
+{
+  "name": "getdevflow/vapor",
+  "description": "Ported from Ghost, Vapor is a minimal and responsive theme with a focus on typography.",
+  "type": "devflow-theme",
+  "keywords": ["vapor","vapor-theme","theme","themes"],
+  "license": "GPL-2.0-only",
+  "authors": [
+    {
+      "name": "Joshua Parker",
+      "email": "joshua@joshuaparker.dev"
+    }
+  ],
+  "require": {
+    "php": ">=8.3",
+    "oomphinc/composer-installers-extender": "^2.0"
+  },
+  "extra": {
+    "installer-name": "Vapor",
+    "installer-types": ["devflow-theme"]
+  },
+  "minimum-stability": "stable",
+  "prefer-stable": true,
+  "config": {
+    "allow-plugins": {
+      "composer/installers": true,
+      "oomphinc/composer-installers-extender": true
+    }
+  }
+}

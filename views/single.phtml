@@ -1,0 +1,54 @@
+<?php
+
+use function App\Shared\Helpers\get_name;
+use function App\Shared\Helpers\get_user_avatar_url;
+use function App\Shared\Helpers\get_user_option;
+use function App\Shared\Helpers\get_userdata;
+use function App\Shared\Helpers\site_url;
+use function App\Shared\Helpers\the_body;
+use function App\Shared\Helpers\the_published_date;
+use function App\Shared\Helpers\the_published_time;
+use function App\Shared\Helpers\the_title;
+use function Qubus\Security\Helpers\t__;
+
+$this->parent('theme::Vapor/views/layout');
+$this->block('vapor-content', function ($param) {
+    $user = get_userdata($param['content']->author);
+?>
+<article class="post full">
+    <header>
+        <h1 class="post-title"><?=the_title($param['content']->id)?></h1>
+        <div class="post-meta"><time><?=the_published_date($param['content']->id);?> @ <?=the_published_time($param['content']->id);?></time></div>
+    </header>
+    <?php if (!empty($param['content']->featuredImage)) { ?>
+        <div class="featured featured-image">
+            <img itemprop="image" width="100%" src="<?=$param['content']->featuredImage;?>" alt="<?=$param['content']->title?>"/>
+        </div>
+    <?php } ?>
+    <section class="post-content">
+        <?=the_body($param['content']->id)?>
+    </section>
+    <section class="share">
+        <div class="A">
+            <p class="tag"><?=t__(msgid: 'Tag', domain: 'vapor-theme');?>: <?=$param['content']->type;?></p>
+        </div>
+        <div class="B">
+            <a onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" href="https://twitter.com/share?url=<?=site_url($param['content']->slug);?>&text=<?=$param['content']->title;?>">
+                <i class="fa fa-2x fa-fw fa-twitter"></i> <span class="hidden"><?=t__(msgid: 'Twitter', domain: 'vapor-theme');?></span>
+            </a>
+            <a onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" href="https://www.facebook.com/sharer.php?u=<?=site_url($param['content']->slug)?>&t=<?=$param['content']->title;?>">
+                <i class="fa fa-2x fa-fw fa-facebook-square"></i> <span class="hidden"><?=t__(msgid: 'Facebook', domain: 'vapor-theme');?></span>
+            </a>
+        </div>
+        <div class="clear"></div>
+    </section>
+    <footer class="post-footer">
+        <section class="author">
+            <div style="background: url(<?=get_user_avatar_url($user->email);?>)" class="authorimage"></div>
+            <p class="attr"><?=t__(msgid: 'Author', domain: 'vapor-theme');?></p>
+            <h4><a href="<?=$user->url;?>"><?=get_name($param['content']->author, true);?></a></h4>
+            <?=get_user_option('bio', $param['content']->author);?>
+        </section>
+    </footer>
+</article>
+<?php }); ?>

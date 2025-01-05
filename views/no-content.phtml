@@ -1,0 +1,10 @@
+<?php
+use function Qubus\Security\Helpers\t__;
+
+$this->parent('theme::Vapor/views/layout');
+$this->block('vapor-content', function () {
+?>
+
+<h1><?=t__(msgid: 'No content found!', domain: 'vapor-theme');?></h1>
+
+<?php }); ?>

@@ -1,0 +1,112 @@
+<?php
+
+declare(strict_types=1);
+
+use App\Application\Devflow;
+use App\Infrastructure\Services\Options;
+use App\Shared\Services\Registry;
+use Qubus\EventDispatcher\ActionFilter\Action;
+
+use function App\Shared\Helpers\admin_url;
+use function App\Shared\Helpers\selected;
+use function Qubus\Security\Helpers\esc_html__;
+use function Qubus\Security\Helpers\t__;
+
+$this->parent('framework::backend/layouts/admin-layout');
+$this->block('backend', function ($param) {
+Registry::getInstance()->{'set'}('screen_parent', 'options');
+Registry::getInstance()->{'set'}('screen_child', 'options-vapor-theme');
+
+$option = Options::factory()->read('vapor_theme_settings');
+?>
+    <!-- form start -->
+    <form name="form" method="post" data-toggle="validator" action="<?=admin_url('theme/vapor-theme/'); ?>" id="form" autocomplete="off">
+        <!-- Content Wrapper. Contains post content -->
+        <div class="content-wrapper">
+            <!-- Content Header (Post header) -->
+            <div class="box box-solid">
+                <div class="box-header with-border">
+                    <i class="fa fa-palette"></i>
+                    <h3 class="box-title"><?= esc_html__(string: 'Vapor Theme Options', domain: 'vapor-theme'); ?></h3>
+
+                    <div class="pull-right">
+                        <button type="submit" class="btn btn-success"><i class="fa fa-pencil-alt"></i> <?= esc_html__(string: 'Update', domain: 'vapor-theme'); ?></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main content -->
+            <section class="content">
+
+                <?php Action::getInstance()->doAction('admin_notices'); ?>
+
+                <?= Devflow::inst()::$APP->flash->display(); ?>
+
+                <div class="row">
+                    <!-- left column -->
+                    <div class="col-md-9">
+                        <!-- general form elements -->
+                        <div class="box box-primary">
+                            <div class="box-header with-border">
+                                <h3 class="box-title"><?= esc_html__(string: 'Vapor Theme Options', domain: 'vapor-theme'); ?></h3>
+                            </div>
+                            <!-- /.box-header -->
+                            <?php if(count($param['types']) > 0) : ?>
+                            <div class="box-body">
+                                <div class="form-group">
+                                    <label><strong><?= esc_html__(string: 'Content Type', domain: 'vapor-theme'); ?></strong></label>
+                                    <select class="form-control select2" name="vapor_content_type" style="width: 100%;">
+                                        <option>&nbsp;</option>
+                                        <?php foreach ($param['types'] as $type) : ?>
+                                        <option value="<?=$type['slug'];?>"<?=selected($option['vapor_content_type'], $type['slug'], false);?>><?=$type['title'];?></option>
+                                        <?php endforeach; ?>
+                                    </select>
+                                </div>
+                                <?php endif; ?>
+                                <div class="form-group">
+                                    <label><strong><span style="color: red; ">*</span> <?= esc_html__(string: 'Content Offset', domain: 'vapor-theme'); ?></strong></label>
+                                    <input type="text" class="form-control" name="vapor_content_offset" value="<?=$option['vapor_content_offset'];?>" required/>
+                                </div>
+                                <div class="form-group">
+                                    <label><strong><span style="color: red; ">*</span> <?= esc_html__(string: 'Content Status', domain: 'vapor-theme'); ?></strong></label>
+                                    <select class="form-control select2" name="vapor_content_status" style="width: 100%;" required>
+                                        <option>&nbsp;</option>
+                                        <option value="all" <?=selected($option['vapor_content_status'], 'all', false);?>><?=t__(msgid: 'All', domain: 'vapor-theme');?></option>
+                                        <option value="published" <?=selected($option['vapor_content_status'], 'published', false);?>><?=t__(msgid: 'Published', domain: 'vapor-theme');?></option>
+                                        <option value="draft" <?=selected($option['vapor_content_status'], 'draft', false);?>><?=t__(msgid: 'Draft', domain: 'vapor-theme');?></option>
+                                        <option value="pending" <?=selected($option['vapor_content_status'], 'pending', false);?>><?=t__(msgid: 'Pending', domain: 'vapor-theme');?></option>
+                                        <option value="archived" <?=selected($option['vapor_content_status'], 'archived', false);?>><?=t__(msgid: 'Archived', domain: 'vapor-theme');?></option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label><strong><span style="color: red; ">*</span> <?= esc_html__(string: 'Order Content By', domain: 'vapor-theme'); ?></strong></label>
+                                    <select class="form-control select2" name="vapor_content_orderby" style="width: 100%;" required>
+                                        <option>&nbsp;</option>
+                                        <option value="published" <?=selected($option['vapor_content_orderby'], 'published', false);?>><?=t__(msgid: 'Published Date', domain: 'vapor-theme');?></option>
+                                        <option value="modified" <?=selected($option['vapor_content_orderby'], 'modified', false);?>><?=t__(msgid: 'Modified Date', domain: 'vapor-theme');?></option>
+                                        <option value="created" <?=selected($option['vapor_content_orderby'], 'created', false);?>><?=t__(msgid: 'Created Date', domain: 'vapor-theme');?></option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label><strong><span style="color: red; ">*</span> <?= esc_html__(string: 'Order', domain: 'vapor-theme'); ?></strong></label>
+                                    <select class="form-control select2" name="vapor_content_order" style="width: 100%;" required>
+                                        <option>&nbsp;</option>
+                                        <option value="asc" <?=selected($option['vapor_content_order'], 'asc', false);?>><?=t__(msgid: 'Ascending Order', domain: 'vapor-theme');?></option>
+                                        <option value="desc" <?=selected($option['vapor_content_order'], 'desc', false);?>><?=t__(msgid: 'Descending Order', domain: 'vapor-theme');?></option>
+                                    </select>
+                                </div>
+                            </div>
+                            <!-- /.box-body -->
+                        </div>
+                        <!-- /.box-body -->
+                    </div>
+                    <!-- /.left column -->
+
+                </div>
+                <!--/.row -->
+            </section>
+            <!-- /.Main content -->
+        </div>
+    </form>
+    <!-- /.Content Wrapper. Contains post content -->
+<?php }); ?>

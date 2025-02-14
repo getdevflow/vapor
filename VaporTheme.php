@@ -26,6 +26,8 @@ use function App\Shared\Helpers\get_all_content_types;
 use function App\Shared\Helpers\theme_root;
 use function App\Shared\Helpers\theme_url;
 use function basename;
+use function dirname;
+use function get_class;
 use function Qubus\Security\Helpers\t__;
 
 class VaporTheme extends Theme

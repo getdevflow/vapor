@@ -2,11 +2,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Vapor Theme\n"
-"POT-Creation-Date: 2026-06-04 10:36-0600\n"
-"PO-Revision-Date: 2026-06-04 10:36-0600\n"
+"POT-Creation-Date: 2026-06-04 10:35-0600\n"
+"PO-Revision-Date: 2026-06-04 10:41-0600\n"
 "Last-Translator: \n"
 "Language-Team: Joshua Parker\n"
-"Language: en_US\n"
+"Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -22,134 +22,138 @@ msgstr ""
 #: Controllers/VaporThemeController.php:59
 #: Controllers/VaporThemeController.php:153
 msgid "404: Not Found"
-msgstr ""
+msgstr "404: Нет такой страницы"
 
 #: Controllers/VaporThemeController.php:99
 msgid "Access denied."
-msgstr ""
+msgstr "В доступе отказано."
 
 #: Controllers/VaporThemeController.php:117
+#, fuzzy
 msgid "Update error."
-msgstr ""
+msgstr "Ошибка обновления."
 
 #: Controllers/VaporThemeController.php:121
 msgid "Updated successfully."
-msgstr ""
+msgstr "Обновлено успешно."
 
 #: VaporTheme.php:43
+#, fuzzy
 msgid "Vapor"
-msgstr ""
+msgstr "Пар"
 
 #: VaporTheme.php:49
-msgid ""
-"Ported from Ghost, Vapor is a minimal and responsive theme with a focus on "
-"typography."
-msgstr ""
+#, fuzzy
+msgid "Ported from Ghost, Vapor is a minimal and responsive theme with a focus on typography."
+msgstr "Портированный с Ghost, Vapor — это минималистичная и отзывчивая тема с акцентом на типографику."
 
 #: views/index.phtml:25
+#, fuzzy
 msgid "read more . . ."
-msgstr ""
+msgstr "читать далее . . ."
 
 #: views/index.phtml:32
 msgid "Newer"
-msgstr ""
+msgstr "Новые"
 
 #: views/index.phtml:35
 msgid "Older"
-msgstr ""
+msgstr "Старее"
 
 #: views/layout.phtml:39
 msgid "All rights reserved."
-msgstr ""
+msgstr "Все права защищены."
 
 #: views/layout.phtml:40
 msgid "Design by"
-msgstr ""
+msgstr "Совместно с"
 
 #: views/no-content.phtml:8
 msgid "No content found!"
-msgstr ""
+msgstr "Содержимое не найдено!"
 
 #: views/show.phtml:30 views/show.phtml:51
+#, fuzzy
 msgid "Vapor Theme Options"
-msgstr ""
+msgstr "Варианты паровой темы"
 
 #: views/show.phtml:33
 msgid "Update"
-msgstr ""
+msgstr "Обновить"
 
 #: views/show.phtml:57
 msgid "Content Type"
-msgstr ""
+msgstr "Тип содержимого"
 
 #: views/show.phtml:67
 msgid "Content Offset"
-msgstr ""
+msgstr "Смещение содержимого"
 
 #: views/show.phtml:71
 msgid "Content Status"
-msgstr ""
+msgstr "Статус Содержимого"
 
 #: views/show.phtml:74
 msgid "All"
-msgstr ""
+msgstr "Все"
 
 #: views/show.phtml:75
 msgid "Published"
-msgstr ""
+msgstr "Опубликовано"
 
 #: views/show.phtml:76
 msgid "Draft"
-msgstr ""
+msgstr "Черновик"
 
 #: views/show.phtml:77
 msgid "Pending"
-msgstr ""
+msgstr "В ожидании"
 
 #: views/show.phtml:78
 msgid "Archived"
-msgstr ""
+msgstr "Архивировано"
 
 #: views/show.phtml:82
+#, fuzzy
 msgid "Order Content By"
-msgstr ""
+msgstr "Заказать содержимое по"
 
 #: views/show.phtml:85
 msgid "Published Date"
-msgstr ""
+msgstr "Дата публикации"
 
 #: views/show.phtml:86
 msgid "Modified Date"
-msgstr ""
+msgstr "Дата изменения"
 
 #: views/show.phtml:87
 msgid "Created Date"
-msgstr ""
+msgstr "Дата создания"
 
 #: views/show.phtml:91
 msgid "Order"
-msgstr ""
+msgstr "Заказ"
 
 #: views/show.phtml:94
 msgid "Ascending Order"
-msgstr ""
+msgstr "По возрастанию"
 
 #: views/show.phtml:95
 msgid "Descending Order"
-msgstr ""
+msgstr "В порядке убывания"
 
 #: views/single.phtml:33
 msgid "Tag"
-msgstr ""
+msgstr "Тег"
 
 #: views/single.phtml:37
 msgid "X (Twitter)"
-msgstr ""
+msgstr "X (Twitter)"
 
 #: views/single.phtml:40
 msgid "Facebook"
-msgstr ""
+msgstr "Facebook"
 
 #: views/single.phtml:48
 msgid "Author"
-msgstr ""
+msgstr "Автор"

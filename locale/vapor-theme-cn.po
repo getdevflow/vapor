@@ -2,11 +2,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Vapor Theme\n"
-"POT-Creation-Date: 2026-06-04 10:36-0600\n"
-"PO-Revision-Date: 2026-06-04 10:36-0600\n"
+"POT-Creation-Date: 2026-06-04 10:37-0600\n"
+"PO-Revision-Date: 2026-06-04 10:37-0600\n"
 "Last-Translator: \n"
 "Language-Team: Joshua Parker\n"
-"Language: en_US\n"
+"Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -22,134 +22,141 @@ msgstr ""
 #: Controllers/VaporThemeController.php:59
 #: Controllers/VaporThemeController.php:153
 msgid "404: Not Found"
-msgstr ""
+msgstr "404 - 未找到"
 
 #: Controllers/VaporThemeController.php:99
 msgid "Access denied."
-msgstr ""
+msgstr "拒绝访问。"
 
 #: Controllers/VaporThemeController.php:117
+#, fuzzy
 msgid "Update error."
-msgstr ""
+msgstr "更新错误。"
 
 #: Controllers/VaporThemeController.php:121
 msgid "Updated successfully."
-msgstr ""
+msgstr "已更新。"
 
 #: VaporTheme.php:43
+#, fuzzy
 msgid "Vapor"
-msgstr ""
+msgstr "蒸汽"
 
 #: VaporTheme.php:49
+#, fuzzy
 msgid ""
 "Ported from Ghost, Vapor is a minimal and responsive theme with a focus on "
 "typography."
-msgstr ""
+msgstr "Vapor从Ghost移植过来，是一个极简且响应灵敏的主题，重点在于排版。"
 
 #: views/index.phtml:25
+#, fuzzy
 msgid "read more . . ."
-msgstr ""
+msgstr "阅读更多......"
 
 #: views/index.phtml:32
 msgid "Newer"
-msgstr ""
+msgstr "更新的"
 
 #: views/index.phtml:35
 msgid "Older"
-msgstr ""
+msgstr "较早"
 
 #: views/layout.phtml:39
 msgid "All rights reserved."
-msgstr ""
+msgstr "版权所有。"
 
 #: views/layout.phtml:40
 msgid "Design by"
-msgstr ""
+msgstr "设计来自"
 
 #: views/no-content.phtml:8
 msgid "No content found!"
-msgstr ""
+msgstr "未找到内容！"
 
 #: views/show.phtml:30 views/show.phtml:51
+#, fuzzy
 msgid "Vapor Theme Options"
-msgstr ""
+msgstr "蒸汽主题选项"
 
 #: views/show.phtml:33
 msgid "Update"
-msgstr ""
+msgstr "更新"
 
 #: views/show.phtml:57
 msgid "Content Type"
-msgstr ""
+msgstr "内容类型"
 
 #: views/show.phtml:67
 msgid "Content Offset"
-msgstr ""
+msgstr "内容偏移"
 
 #: views/show.phtml:71
 msgid "Content Status"
-msgstr ""
+msgstr "内容状态"
 
 #: views/show.phtml:74
 msgid "All"
-msgstr ""
+msgstr "所有"
 
 #: views/show.phtml:75
 msgid "Published"
-msgstr ""
+msgstr "已发布"
 
 #: views/show.phtml:76
 msgid "Draft"
-msgstr ""
+msgstr "草稿"
 
 #: views/show.phtml:77
 msgid "Pending"
-msgstr ""
+msgstr "待定"
 
 #: views/show.phtml:78
 msgid "Archived"
-msgstr ""
+msgstr "已存档"
 
 #: views/show.phtml:82
+#, fuzzy
 msgid "Order Content By"
-msgstr ""
+msgstr "内容排序"
 
 #: views/show.phtml:85
 msgid "Published Date"
-msgstr ""
+msgstr "发布日期"
 
 #: views/show.phtml:86
 msgid "Modified Date"
-msgstr ""
+msgstr "修改日期"
 
 #: views/show.phtml:87
 msgid "Created Date"
-msgstr ""
+msgstr "创建日期"
 
 #: views/show.phtml:91
+#, fuzzy
 msgid "Order"
-msgstr ""
+msgstr "秩序"
 
 #: views/show.phtml:94
 msgid "Ascending Order"
-msgstr ""
+msgstr "升序"
 
 #: views/show.phtml:95
 msgid "Descending Order"
-msgstr ""
+msgstr "降序"
 
 #: views/single.phtml:33
 msgid "Tag"
-msgstr ""
+msgstr "标签"
 
 #: views/single.phtml:37
 msgid "X (Twitter)"
-msgstr ""
+msgstr "推特"
 
 #: views/single.phtml:40
 msgid "Facebook"
-msgstr ""
+msgstr "Facebook"
 
 #: views/single.phtml:48
 msgid "Author"
-msgstr ""
+msgstr "作者"

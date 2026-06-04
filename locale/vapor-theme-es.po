@@ -2,8 +2,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Vapor Theme\n"
-"POT-Creation-Date: 2024-12-26 20:57-0800\n"
-"PO-Revision-Date: 2024-12-26 20:57-0800\n"
+"POT-Creation-Date: 2026-06-04 10:36-0600\n"
+"PO-Revision-Date: 2026-06-04 10:36-0600\n"
 "Last-Translator: \n"
 "Language-Team: Joshua Parker\n"
 "Language: es\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Domain: vapor-theme\n"
-"X-Generator: Poedit 3.4.2\n"
+"X-Generator: Poedit 3.9\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: t__;esc_html__\n"
@@ -19,28 +19,28 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-0: locale\n"
 "X-Poedit-SearchPathExcluded-1: assets\n"
 
-#: Controllers/VaporThemeController.php:73
-#: Controllers/VaporThemeController.php:166
+#: Controllers/VaporThemeController.php:59
+#: Controllers/VaporThemeController.php:153
 msgid "404: Not Found"
 msgstr "404: No encontrado"
 
-#: Controllers/VaporThemeController.php:113
+#: Controllers/VaporThemeController.php:99
 msgid "Access denied."
 msgstr "Acceso denegado."
 
-#: Controllers/VaporThemeController.php:131
+#: Controllers/VaporThemeController.php:117
 msgid "Update error."
 msgstr "Error de actualización."
 
-#: Controllers/VaporThemeController.php:135
+#: Controllers/VaporThemeController.php:121
 msgid "Updated successfully."
 msgstr "Actualizado exitosamente."
 
-#: VaporTheme.php:42
+#: VaporTheme.php:43
 msgid "Vapor"
 msgstr "Vapor"
 
-#: VaporTheme.php:46
+#: VaporTheme.php:49
 msgid ""
 "Ported from Ghost, Vapor is a minimal and responsive theme with a focus on "
 "typography."
@@ -60,11 +60,11 @@ msgstr "más nuevo"
 msgid "Older"
 msgstr "mayor"
 
-#: views/layout.phtml:40
+#: views/layout.phtml:39
 msgid "All rights reserved."
 msgstr "Todos los derechos reservados."
 
-#: views/layout.phtml:41
+#: views/layout.phtml:40
 msgid "Design by"
 msgstr "Diseño por"
 
@@ -145,12 +145,12 @@ msgid "Tag"
 msgstr "Etiqueta"
 
 #: views/single.phtml:37
-msgid "Twitter"
-msgstr ""
+msgid "X (Twitter)"
+msgstr "X (Twitter)"
 
 #: views/single.phtml:40
 msgid "Facebook"
-msgstr ""
+msgstr "Facebook"
 
 #: views/single.phtml:48
 msgid "Author"

@@ -2,11 +2,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Vapor Theme\n"
-"POT-Creation-Date: 2026-06-04 10:36-0600\n"
-"PO-Revision-Date: 2026-06-04 10:36-0600\n"
+"POT-Creation-Date: 2026-06-04 10:35-0600\n"
+"PO-Revision-Date: 2026-06-04 10:40-0600\n"
 "Last-Translator: \n"
 "Language-Team: Joshua Parker\n"
-"Language: en_US\n"
+"Language: pt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -22,134 +22,139 @@ msgstr ""
 #: Controllers/VaporThemeController.php:59
 #: Controllers/VaporThemeController.php:153
 msgid "404: Not Found"
-msgstr ""
+msgstr "404: Não Encontrado"
 
 #: Controllers/VaporThemeController.php:99
 msgid "Access denied."
-msgstr ""
+msgstr "Acesso negado."
 
 #: Controllers/VaporThemeController.php:117
+#, fuzzy
 msgid "Update error."
-msgstr ""
+msgstr "Erro de atualização."
 
 #: Controllers/VaporThemeController.php:121
 msgid "Updated successfully."
-msgstr ""
+msgstr "Atualizado com sucesso."
 
 #: VaporTheme.php:43
+#, fuzzy
 msgid "Vapor"
-msgstr ""
+msgstr "Vapor"
 
 #: VaporTheme.php:49
-msgid ""
-"Ported from Ghost, Vapor is a minimal and responsive theme with a focus on "
-"typography."
-msgstr ""
+#, fuzzy
+msgid "Ported from Ghost, Vapor is a minimal and responsive theme with a focus on typography."
+msgstr "Adaptado de Ghost, Vapor é um tema minimalista e responsivo, com foco na tipografia."
 
 #: views/index.phtml:25
+#, fuzzy
 msgid "read more . . ."
-msgstr ""
+msgstr "Leia mais..."
 
 #: views/index.phtml:32
 msgid "Newer"
-msgstr ""
+msgstr "Recentes"
 
 #: views/index.phtml:35
 msgid "Older"
-msgstr ""
+msgstr "Antigos"
 
 #: views/layout.phtml:39
 msgid "All rights reserved."
-msgstr ""
+msgstr "Todos os direitos reservados."
 
 #: views/layout.phtml:40
 msgid "Design by"
-msgstr ""
+msgstr "Desenvolvido por"
 
 #: views/no-content.phtml:8
 msgid "No content found!"
-msgstr ""
+msgstr "Nenhum conteúdo encontrado!"
 
 #: views/show.phtml:30 views/show.phtml:51
+#, fuzzy
 msgid "Vapor Theme Options"
-msgstr ""
+msgstr "Opções de Tema de Vapor"
 
 #: views/show.phtml:33
 msgid "Update"
-msgstr ""
+msgstr "Atualizar"
 
 #: views/show.phtml:57
 msgid "Content Type"
-msgstr ""
+msgstr "Tipo de conteúdo"
 
 #: views/show.phtml:67
+#, fuzzy
 msgid "Content Offset"
-msgstr ""
+msgstr "Deslocamento de conteúdo"
 
 #: views/show.phtml:71
 msgid "Content Status"
-msgstr ""
+msgstr "Status do Conteúdo"
 
 #: views/show.phtml:74
 msgid "All"
-msgstr ""
+msgstr "Todos"
 
 #: views/show.phtml:75
 msgid "Published"
-msgstr ""
+msgstr "Publicado"
 
 #: views/show.phtml:76
 msgid "Draft"
-msgstr ""
+msgstr "Rascunho"
 
 #: views/show.phtml:77
 msgid "Pending"
-msgstr ""
+msgstr "Pendente"
 
 #: views/show.phtml:78
 msgid "Archived"
-msgstr ""
+msgstr "Arquivado"
 
 #: views/show.phtml:82
+#, fuzzy
 msgid "Order Content By"
-msgstr ""
+msgstr "Ordenar o Conteúdo por"
 
 #: views/show.phtml:85
 msgid "Published Date"
-msgstr ""
+msgstr "Data de publicação"
 
 #: views/show.phtml:86
 msgid "Modified Date"
-msgstr ""
+msgstr "Data de Alteração"
 
 #: views/show.phtml:87
 msgid "Created Date"
-msgstr ""
+msgstr "Data de Criação"
 
 #: views/show.phtml:91
 msgid "Order"
-msgstr ""
+msgstr "Pedido"
 
 #: views/show.phtml:94
 msgid "Ascending Order"
-msgstr ""
+msgstr "Ordem Crescente"
 
 #: views/show.phtml:95
 msgid "Descending Order"
-msgstr ""
+msgstr "Ordem Decrescente"
 
 #: views/single.phtml:33
 msgid "Tag"
-msgstr ""
+msgstr "Tag"
 
 #: views/single.phtml:37
 msgid "X (Twitter)"
-msgstr ""
+msgstr "X (Twitter)"
 
 #: views/single.phtml:40
 msgid "Facebook"
-msgstr ""
+msgstr "Facebook"
 
 #: views/single.phtml:48
 msgid "Author"
-msgstr ""
+msgstr "Autor"

@@ -4,27 +4,28 @@ declare(strict_types=1);
 
 namespace Theme\Vapor;
 
-use App\Infrastructure\Services\Options;
+use App\Application\Devflow;
 use App\Infrastructure\Services\Theme;
 use App\Shared\Services\Registry;
 use App\Shared\Services\Utils;
-use Codefy\CommandBus\Exceptions\CommandPropertyNotFoundException;
-use Codefy\QueryBus\UnresolvableQueryHandlerException;
 use Psr\Container\ContainerExceptionInterface;
 use Psr\Container\NotFoundExceptionInterface;
 use Psr\SimpleCache\InvalidArgumentException;
 use Qubus\EventDispatcher\ActionFilter\Action;
-use Qubus\EventDispatcher\ActionFilter\Filter;
 use Qubus\Exception\Data\TypeException;
 use Qubus\Exception\Exception;
+use Qubus\Http\ServerRequest;
+use Qubus\Routing\Exceptions\TooLateToAddNewRouteException;
 use ReflectionException;
+use Theme\Vapor\Controllers\VaporThemeController;
 
 use function App\Shared\Helpers\add_themes_submenu;
 use function App\Shared\Helpers\cms_enqueue_css;
 use function App\Shared\Helpers\css_directory_uri;
-use function App\Shared\Helpers\get_all_content_types;
+use function App\Shared\Helpers\get_option;
 use function App\Shared\Helpers\theme_root;
 use function App\Shared\Helpers\theme_url;
+use function App\Shared\Helpers\update_option;
 use function basename;
 use function dirname;
 use function get_class;
@@ -40,17 +41,21 @@ class VaporTheme extends Theme
     {
         $theme = [
             'name' => t__(msgid: 'Vapor', domain: 'vapor-theme'),
+            'slug' => 'Vapor',
             'id' => 'vapor-theme',
             'author' => 'Joshua Parker',
-            'version' => '1.0.0',
-            'description' => t__(msgid: 'Ported from Ghost, Vapor is a minimal and responsive theme with a focus on typography.', domain: 'vapor-theme'),
+            'version' => '2.0.0',
+            'description' => t__(
+                msgid: 'Ported from Ghost, Vapor is a minimal and responsive theme with a focus on typography.',
+                domain: 'vapor-theme'
+            ),
             'basename' => basename(dirname(__FILE__)),
             'path' => theme_root(__FILE__),
             'url' => theme_url('', __CLASS__),
             'themeUri' => 'https://github.com/getdevflow/vapor',
-            'authorUri' => 'https://nomadicjosh.com/',
+            'authorUri' => 'https://joshuaparker.dev/',
             'className' => get_class($this),
-            'screenshot' => theme_url('Vapor/screenshot.png'),
+            'screenshot' => theme_url('Vapor/images/screenshot.png'),
         ];
 
         Registry::getInstance()->set('vapor-theme', $theme);
@@ -60,13 +65,10 @@ class VaporTheme extends Theme
 
     /**
      * @inheritDoc
-     * @throws ReflectionException|UnresolvableQueryHandlerException
+     * @throws ReflectionException
      */
     public function handle(): void
     {
-        if (count(get_all_content_types()) <= 0) {
-            return;
-        }
         Action::getInstance()->addAction('cms_head', [$this, 'enqueueFrontEndCss']);
         Action::getInstance()->addAction('themes_submenu', [$this, 'registerSubmenu']);
         Action::getInstance()->addAction('after_setup_theme', [$this, 'frontendRender']);
@@ -75,13 +77,11 @@ class VaporTheme extends Theme
 
     /**
      * @return void
-     * @throws CommandPropertyNotFoundException
      * @throws ContainerExceptionInterface
      * @throws Exception
      * @throws NotFoundExceptionInterface
      * @throws ReflectionException
      * @throws TypeException
-     * @throws UnresolvableQueryHandlerException
      */
     public function registerSubmenu(): void
     {
@@ -110,33 +110,32 @@ class VaporTheme extends Theme
         cms_enqueue_css(
             config: 'theme',
             asset: css_directory_uri() . 'normalize.css',
-            slug: $this->id()
+            minify: true,
+            slug: $this->slug()
         );
         cms_enqueue_css(
             config: 'theme',
             asset: css_directory_uri() . 'screen.css',
-            slug: $this->id()
+            minify: true,
+            slug: $this->slug()
         );
         cms_enqueue_css(
             config: 'theme',
             asset: css_directory_uri() . 'font-awesome.min.css',
-            slug: $this->id()
+            slug: $this->slug()
         );
     }
 
     /**
      * @return void
-     * @throws ContainerExceptionInterface
      * @throws Exception
      * @throws InvalidArgumentException
-     * @throws NotFoundExceptionInterface
      * @throws ReflectionException
      * @throws TypeException
      */
     public function registerDefaultOptions(): void
     {
-        $options = Options::factory();
-        if ($options->read(optionKey: 'vapor_theme_settings') !== false) {
+        if (get_option(key: 'vapor_theme_settings') !== false) {
             return;
         }
         $defaults = [
@@ -147,16 +146,15 @@ class VaporTheme extends Theme
             'vapor_content_order' => 'desc',
         ];
 
-        $options->update(optionKey: 'vapor_theme_settings', newvalue: $defaults);
+        update_option(key: 'vapor_theme_settings', value: $defaults);
     }
 
     /**
      * @return void
-     * @throws ContainerExceptionInterface
      * @throws Exception
      * @throws InvalidArgumentException
-     * @throws NotFoundExceptionInterface
      * @throws ReflectionException
+     * @throws TooLateToAddNewRouteException
      * @throws TypeException
      */
     public function backendRender(): void
@@ -166,15 +164,20 @@ class VaporTheme extends Theme
         }
         $this->registerDefaultOptions();
 
-        Filter::getInstance()->addFilter(hook: 'theme_route', callback: function ($router) {
-            $router->setDefaultNamespace('\\Theme\\Vapor\\Controllers');
-            $router->map(['GET', 'POST'], '/admin/theme/vapor-theme/', 'VaporThemeController@show');
-        }, priority: 5);
+        $router = Devflow::$PHP->router;
+
+        $router->map(
+            ['GET', 'POST'],
+            '/admin/theme/vapor-theme/',
+            function (ServerRequest $request, VaporThemeController $controller) {
+                return $controller->show($request);
+            }
+        );
     }
 
     /**
      * @return void
-     * @throws ReflectionException
+     * @throws TooLateToAddNewRouteException
      */
     public function frontendRender(): void
     {
@@ -182,10 +185,14 @@ class VaporTheme extends Theme
             return;
         }
 
-        Filter::getInstance()->addFilter(hook: 'theme_route', callback: function ($router) {
-            $router->setDefaultNamespace('\\Theme\\Vapor\\Controllers');
-            $router->get('/', 'VaporThemeController@index');
-            $router->get('/{contentSlug}/', 'VaporThemeController@single');
-        }, priority: 5);
+        $router = Devflow::$PHP->router;
+
+        $router->get('/', function (VaporThemeController $controller) {
+            return $controller->index();
+        });
+
+        $router->get('/{contentSlug}', function (string $contentSlug, VaporThemeController $controller) {
+            return $controller->single($contentSlug);
+        });
     }
 }

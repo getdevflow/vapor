@@ -3,26 +3,26 @@
 declare(strict_types=1);
 
 use App\Application\Devflow;
-use App\Infrastructure\Services\Options;
 use App\Shared\Services\Registry;
 use Qubus\EventDispatcher\ActionFilter\Action;
 
 use function App\Shared\Helpers\admin_url;
+use function App\Shared\Helpers\get_option;
 use function App\Shared\Helpers\selected;
 use function Qubus\Security\Helpers\esc_html__;
 use function Qubus\Security\Helpers\t__;
 
 $this->parent('framework::backend/layouts/admin-layout');
 $this->block('backend', function ($param) {
-Registry::getInstance()->{'set'}('screen_parent', 'options');
-Registry::getInstance()->{'set'}('screen_child', 'options-vapor-theme');
+Registry::getInstance()->{'set'}('screen_parent', 'themes');
+Registry::getInstance()->{'set'}('screen_child', 'vapor-theme');
 
-$option = Options::factory()->read('vapor_theme_settings');
+$option = get_option(key: 'vapor_theme_settings');
 ?>
-    <!-- form start -->
-    <form name="form" method="post" data-toggle="validator" action="<?=admin_url('theme/vapor-theme/'); ?>" id="form" autocomplete="off">
-        <!-- Content Wrapper. Contains post content -->
-        <div class="content-wrapper">
+    <!-- Content Wrapper. Contains post content -->
+    <div class="content-wrapper">
+        <!-- form start -->
+        <form name="form" method="post" data-toggle="validator" action="<?=admin_url('theme/vapor-theme/'); ?>" id="form" autocomplete="off">
             <!-- Content Header (Post header) -->
             <div class="box box-solid">
                 <div class="box-header with-border">
@@ -40,7 +40,7 @@ $option = Options::factory()->read('vapor_theme_settings');
 
                 <?php Action::getInstance()->doAction('admin_notices'); ?>
 
-                <?= Devflow::inst()::$APP->flash->display(); ?>
+                <?= Devflow::$PHP->flash->display(); ?>
 
                 <div class="row">
                     <!-- left column -->
@@ -106,7 +106,7 @@ $option = Options::factory()->read('vapor_theme_settings');
                 <!--/.row -->
             </section>
             <!-- /.Main content -->
-        </div>
-    </form>
+        </form>
+    </div>
     <!-- /.Content Wrapper. Contains post content -->
 <?php }); ?>

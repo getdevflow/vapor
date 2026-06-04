@@ -33,8 +33,8 @@ $this->block('vapor-content', function ($param) {
             <p class="tag"><?=t__(msgid: 'Tag', domain: 'vapor-theme');?>: <?=$param['content']->type;?></p>
         </div>
         <div class="B">
-            <a onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" href="https://twitter.com/share?url=<?=site_url($param['content']->slug);?>&text=<?=$param['content']->title;?>">
-                <i class="fa fa-2x fa-fw fa-twitter"></i> <span class="hidden"><?=t__(msgid: 'Twitter', domain: 'vapor-theme');?></span>
+            <a onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" href="https://x.com/share?url=<?=site_url($param['content']->slug);?>&text=<?=$param['content']->title;?>">
+                <i class="fa fa-2x fa-fw fa-twitter"></i> <span class="hidden"><?=t__(msgid: 'X (Twitter)', domain: 'vapor-theme');?></span>
             </a>
             <a onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" href="https://www.facebook.com/sharer.php?u=<?=site_url($param['content']->slug)?>&t=<?=$param['content']->title;?>">
                 <i class="fa fa-2x fa-fw fa-facebook-square"></i> <span class="hidden"><?=t__(msgid: 'Facebook', domain: 'vapor-theme');?></span>

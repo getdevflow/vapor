@@ -12,6 +12,7 @@ use Psr\Container\ContainerExceptionInterface;
 use Psr\Container\NotFoundExceptionInterface;
 use Psr\SimpleCache\InvalidArgumentException;
 use Qubus\EventDispatcher\ActionFilter\Action;
+use Qubus\EventDispatcher\ActionFilter\Filter;
 use Qubus\Exception\Data\TypeException;
 use Qubus\Exception\Exception;
 use Qubus\Http\ServerRequest;
@@ -21,6 +22,7 @@ use Theme\Vapor\Controllers\VaporThemeController;
 
 use function App\Shared\Helpers\add_themes_submenu;
 use function App\Shared\Helpers\cms_enqueue_css;
+use function App\Shared\Helpers\compare_releases;
 use function App\Shared\Helpers\css_directory_uri;
 use function App\Shared\Helpers\get_option;
 use function App\Shared\Helpers\theme_root;
@@ -44,7 +46,7 @@ class VaporTheme extends Theme
             'slug' => 'Vapor',
             'id' => 'vapor-theme',
             'author' => 'Joshua Parker',
-            'version' => '2.0.0',
+            'version' => '3.0.0',
             'description' => t__(
                 msgid: 'Ported from Ghost, Vapor is a minimal and responsive theme with a focus on typography.',
                 domain: 'vapor-theme'
@@ -66,13 +68,20 @@ class VaporTheme extends Theme
     /**
      * @inheritDoc
      * @throws ReflectionException
+     * @throws Exception
      */
     public function handle(): void
     {
+        if (compare_releases(Devflow::release(), '2.3.0', '<')) {
+            $this->registerAdminNotice();
+            return;
+        }
+
         Action::getInstance()->addAction('cms_head', [$this, 'enqueueFrontEndCss']);
         Action::getInstance()->addAction('themes_submenu', [$this, 'registerSubmenu']);
         Action::getInstance()->addAction('after_setup_theme', [$this, 'frontendRender']);
         Action::getInstance()->addAction('theme_loaded', [$this, 'backendRender']);
+        Filter::getInstance()->addFilter('pagebuilder.support', fn() => false);
     }
 
     /**
@@ -121,7 +130,7 @@ class VaporTheme extends Theme
         );
         cms_enqueue_css(
             config: 'theme',
-            asset: css_directory_uri() . 'font-awesome.min.css',
+            asset: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css',
             slug: $this->slug()
         );
     }
@@ -193,6 +202,22 @@ class VaporTheme extends Theme
 
         $router->get('/{contentSlug}', function (string $contentSlug, VaporThemeController $controller) {
             return $controller->single($contentSlug);
+        });
+    }
+
+    /**
+     * @return void
+     * @throws ReflectionException
+     */
+    private function registerAdminNotice(): void
+    {
+        Action::getInstance()->addAction('admin_notices', function () {
+            echo '<div class="alert dismissable alert-danger center sticky">' .
+                t__(
+                    'You must upgrade your system to at least v2.3 in order to use the new Vapor theme.',
+                    $this->id()
+                ) .
+            '</div>';
         });
     }
 }

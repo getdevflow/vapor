@@ -1,8 +1,12 @@
 <?php
+
+use Qubus\EventDispatcher\ActionFilter\Action;
+
 use function Qubus\Security\Helpers\t__;
 
 $this->parent('theme::Vapor/views/layout');
 $this->block('vapor-content', function () {
+Action::getInstance()->doAction('http.404');
 ?>
 
 <h1><?=t__(msgid: 'No content found!', domain: 'vapor-theme');?></h1>

@@ -2,8 +2,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Vapor Theme\n"
-"POT-Creation-Date: 2026-06-04 10:35-0600\n"
-"PO-Revision-Date: 2026-06-04 10:39-0600\n"
+"POT-Creation-Date: 2026-06-10 10:24-0600\n"
+"PO-Revision-Date: 2026-06-10 10:24-0600\n"
 "Last-Translator: \n"
 "Language-Team: Joshua Parker\n"
 "Language: de\n"
@@ -38,15 +38,28 @@ msgstr "Update-Fehler."
 msgid "Updated successfully."
 msgstr "Erfolgreich aktualisiert."
 
-#: VaporTheme.php:43
+#: VaporTheme.php:45
 #, fuzzy
 msgid "Vapor"
 msgstr "Dampf"
 
-#: VaporTheme.php:49
+#: VaporTheme.php:51
 #, fuzzy
-msgid "Ported from Ghost, Vapor is a minimal and responsive theme with a focus on typography."
-msgstr "Vapor, portiert von Ghost, ist ein minimalistisches und reaktionsschnelles Thema mit Fokus auf Typografie."
+msgid ""
+"Ported from Ghost, Vapor is a minimal and responsive theme with a focus on "
+"typography."
+msgstr ""
+"Vapor, portiert von Ghost, ist ein minimalistisches und reaktionsschnelles "
+"Thema mit Fokus auf Typografie."
+
+#: VaporTheme.php:217
+#, fuzzy
+msgid ""
+"You must upgrade your system to at least v2.3 in order to use the new Vapor "
+"theme."
+msgstr ""
+"Du musst dein System mindestens auf Version 2.3 upgraden, um das neue Vapor-"
+"Theme nutzen zu können."
 
 #: views/index.phtml:25
 #, fuzzy
@@ -61,15 +74,15 @@ msgstr "Neuer"
 msgid "Older"
 msgstr "Älter"
 
-#: views/layout.phtml:39
+#: views/layout.phtml:41
 msgid "All rights reserved."
 msgstr "Alle Rechte vorbehalten."
 
-#: views/layout.phtml:40
+#: views/layout.phtml:42
 msgid "Design by"
 msgstr "Design von"
 
-#: views/no-content.phtml:8
+#: views/no-content.phtml:12
 msgid "No content found!"
 msgstr "Kein Inhalt gefunden!"
 

@@ -2,8 +2,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Vapor Theme\n"
-"POT-Creation-Date: 2026-06-04 10:36-0600\n"
-"PO-Revision-Date: 2026-06-04 10:36-0600\n"
+"POT-Creation-Date: 2026-06-10 10:24-0600\n"
+"PO-Revision-Date: 2026-06-10 10:25-0600\n"
 "Last-Translator: \n"
 "Language-Team: Joshua Parker\n"
 "Language: es\n"
@@ -36,17 +36,26 @@ msgstr "Error de actualización."
 msgid "Updated successfully."
 msgstr "Actualizado exitosamente."
 
-#: VaporTheme.php:43
+#: VaporTheme.php:45
 msgid "Vapor"
 msgstr "Vapor"
 
-#: VaporTheme.php:49
+#: VaporTheme.php:51
 msgid ""
 "Ported from Ghost, Vapor is a minimal and responsive theme with a focus on "
 "typography."
 msgstr ""
 "Portado de Ghost, Vapor es un tema minimalista y responsivo centrado en la "
 "tipografía."
+
+#: VaporTheme.php:217
+#, fuzzy
+msgid ""
+"You must upgrade your system to at least v2.3 in order to use the new Vapor "
+"theme."
+msgstr ""
+"Debes actualizar tu sistema al menos a la v2.3 para poder usar el nuevo "
+"tema de Vapor."
 
 #: views/index.phtml:25
 msgid "read more . . ."
@@ -60,15 +69,15 @@ msgstr "más nuevo"
 msgid "Older"
 msgstr "mayor"
 
-#: views/layout.phtml:39
+#: views/layout.phtml:41
 msgid "All rights reserved."
 msgstr "Todos los derechos reservados."
 
-#: views/layout.phtml:40
+#: views/layout.phtml:42
 msgid "Design by"
 msgstr "Diseño por"
 
-#: views/no-content.phtml:8
+#: views/no-content.phtml:12
 msgid "No content found!"
 msgstr "¡No se encontró contenido!"
 

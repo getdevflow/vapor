@@ -4,11 +4,11 @@ Ported from Ghost, Vapor is a minimal and responsive theme with a focus on typog
 
 > __Requires__ Devflow Version: 2.x
 
-> __Tested Up To:__ 2.2.1
+> __Tested Up To:__ 2.3.0
 
 > __Requires PHP:__ 8.4+
 
-> __Stable Tag:__ 2.0.0
+> __Stable Tag:__ 3.0.0
 
 > __License:__ GPLv2-only
 
@@ -23,6 +23,10 @@ Portuguese, Chines (Simplified), German, English, Spanish, French, Italian Japan
 2. In the root of your install, run the following command ```php codex theme:install getdevflow/vapor```.
 
 ## Changelog
+
+### 3.0.0
+- `pagebuilder.support` filter hook check
+- uses new `cms_body_open` action hook
 
 ### 2.0.0
 - Fixed for Devflow 2.x

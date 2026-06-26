@@ -46,7 +46,7 @@ class VaporTheme extends Theme
             'slug' => 'Vapor',
             'id' => 'vapor-theme',
             'author' => 'Joshua Parker',
-            'version' => '3.0.0',
+            'version' => '3.0.1',
             'description' => t__(
                 msgid: 'Ported from Ghost, Vapor is a minimal and responsive theme with a focus on typography.',
                 domain: 'vapor-theme'
@@ -130,7 +130,7 @@ class VaporTheme extends Theme
         );
         cms_enqueue_css(
             config: 'theme',
-            asset: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css',
+            asset: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css',
             slug: $this->slug()
         );
     }

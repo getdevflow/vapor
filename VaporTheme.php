@@ -112,10 +112,6 @@ class VaporTheme extends Theme
      */
     public function enqueueFrontEndCss(): void
     {
-        if (Utils::isAdmin()) {
-            return;
-        }
-
         cms_enqueue_css(
             config: 'theme',
             asset: css_directory_uri() . 'normalize.css',
@@ -168,7 +164,7 @@ class VaporTheme extends Theme
      */
     public function backendRender(): void
     {
-        if (!Utils::isAdmin()) {
+        if (!self::isPath('/admin/')) {
             return;
         }
         $this->registerDefaultOptions();
@@ -187,10 +183,11 @@ class VaporTheme extends Theme
     /**
      * @return void
      * @throws TooLateToAddNewRouteException
+     * @throws TypeException
      */
     public function frontendRender(): void
     {
-        if (Utils::isAdmin()) {
+        if (self::isPath('/admin/')) {
             return;
         }
 

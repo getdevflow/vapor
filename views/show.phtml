@@ -23,6 +23,7 @@ $option = get_option(key: 'vapor_theme_settings');
     <div class="content-wrapper">
         <!-- form start -->
         <form name="form" method="post" data-toggle="validator" action="<?=admin_url('theme/vapor-theme/'); ?>" id="form" autocomplete="off">
+            <?=csrf_field();?>
             <!-- Content Header (Post header) -->
             <div class="box box-solid">
                 <div class="box-header with-border">

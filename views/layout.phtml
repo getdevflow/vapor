@@ -2,6 +2,7 @@
 use App\Shared\Services\Registry as r;
 use Qubus\EventDispatcher\ActionFilter\Action;
 
+use function App\Shared\Helpers\admin_url;
 use function App\Shared\Helpers\cms_footer;
 use function App\Shared\Helpers\cms_head;
 use function App\Shared\Helpers\cms_body_open;
@@ -14,9 +15,9 @@ use function Qubus\Security\Helpers\t__;
 <html lang="en">
 <head>
     <base href="<?=site_url();?>">
-    <title><?=$title;?></title>
-    <meta name="description" content="<?=get_option(key: 'site_description');?>"/>
     <?php cms_head(); ?>
+    <!-- JQuery-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?subset=latin,cyrillic-ext,latin-ext,cyrillic&family=Open+Sans+Condensed:300|Open+Sans:400,600,400italic,600italic|Merriweather:400,300,300italic,400italic,700,700italic|Roboto+Slab:400,300">
 </head>
 <body class="home-template">

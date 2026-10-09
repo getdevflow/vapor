@@ -46,7 +46,7 @@ class VaporTheme extends Theme
             'slug' => 'Vapor',
             'id' => 'vapor-theme',
             'author' => 'Joshua Parker',
-            'version' => '3.0.1',
+            'version' => '4.0.0',
             'description' => t__(
                 msgid: 'Ported from Ghost, Vapor is a minimal and responsive theme with a focus on typography.',
                 domain: 'vapor-theme'
